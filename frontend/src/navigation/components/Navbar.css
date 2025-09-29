@@ -1,0 +1,163 @@
+/* Reset common styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e0e0e0;
+  padding: 0.8rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* 🔹 Logo Section */
+.navbar-logo-section {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.navbar-logo-section h1 {
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* 🔹 Options Section */
+.navbar-option-section {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar-option {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.navbar-option:hover {
+  color: tomato;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 🔹 Search Box */
+.navbar-search-box {
+  display: flex;
+  align-items: center;
+  background-color: #f1f3f4;
+  border-radius: 6px;
+  padding: 0.2rem 0.6rem;
+  gap: 0.5rem;
+}
+
+.navbar-search-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+  padding: 0.4rem;
+  width: 180px;
+  transition: width 0.3s ease;
+}
+
+.navbar-search-input::placeholder {
+  color: #999;
+}
+
+.navbar-search-input:focus {
+  width: 250px;
+}
+h2,h3{
+  font-size: 1.5rem;
+}
+
+/* 🔹 Responsive Styles */
+
+
+
+/* Tablet (≤768px) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 0.8rem 1rem;
+  }
+
+  .navbar-option-section {
+    gap: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .navbar-search-input {
+    width: 140px;
+  }
+
+  .navbar-search-input:focus {
+    width: 180px;
+  }
+  h2,h3{
+    font-size: 1.2rem;
+  }
+}
+
+/* Mobile (≤480px) */
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: row;     /* 🔹 keep row, not column */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 1rem;
+  }
+  h3 {
+    font-size: 1rem;
+    margin-right: 2rem;
+    margin-top: 1rem;
+  }
+  h2{ 
+    font-size: 1rem;
+    margin-top: 1.8rem;
+  }
+
+  .navbar-logo-section {
+    margin-bottom: 0; /* prevent stacking */
+  }
+
+  .navbar-option-section {
+    gap: 0.6rem;
+    flex: 1;
+    justify-content: flex-end;
+    flex-wrap: nowrap; /* 🔹 no vertical stacking */
+  }
+
+  .navbar-search-box {
+    display: none; /* 🔹 optional: hide search bar to save space */
+  }
+
+  /* Login dropdown stays below navbar */
+  .login-dropdown {
+    position: absolute;
+    top: 100%; /* always below navbar */
+    right: 0.5rem;
+    width: 90%;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 2000;
+  }
+}

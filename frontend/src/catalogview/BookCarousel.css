@@ -1,0 +1,134 @@
+/* === BookCarousel.css === */
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Slide container */
+.carousel-slide {
+  display: flex;
+  gap: 1.25rem;
+  overflow: hidden;
+  flex: 1;
+  justify-content: center;
+}
+
+/* Book card inside carousel */
+.carousel-item {
+  flex: 1 1 200px;
+  max-width: 250px;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 0.75rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.carousel-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.carousel-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.6rem;
+}
+
+.carousel-item h3 {
+  font-size: 1rem;
+  margin: 0.4rem 0;
+}
+
+.carousel-author {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.3rem;
+}
+
+.carousel-genre {
+  font-size: 0.85rem;
+  color: #007bff;
+  font-weight: 500;
+}
+
+/* Navigation buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  z-index: 2;
+}
+
+.carousel-btn:hover {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.carousel-btn.left {
+  left: -20px;
+}
+
+.carousel-btn.right {
+  right: -20px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .carousel-slide {
+    gap: 1rem;
+  }
+  .carousel-item {
+    max-width: 200px;
+  }
+  .carousel-image {
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-slide {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .carousel-item {
+    flex: 1 1 calc(50% - 1rem);
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-item {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  .carousel-image {
+    height: 160px;
+  }
+  .carousel-btn.left {
+    left: 5px;
+  }
+  .carousel-btn.right {
+    right: 5px;
+  }
+}

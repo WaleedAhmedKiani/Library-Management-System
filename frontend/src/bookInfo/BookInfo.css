@@ -1,0 +1,169 @@
+.book-info {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  background: #f9f9f9;
+}
+
+.book-info-container {
+  display: flex;
+  flex-direction: column; /* Always stacked */
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  max-width: 800px; /* desktop default */
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.book-info-cover {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.book-info-title {
+  font-weight: 600;
+  margin: 10px 0;
+  color: #2c3e50;
+}
+
+.book-info-author {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+ .book-info-description {
+  font-size: .2rem;
+  line-height: 1.2;
+  color: #444;
+  max-width: 700px;
+}
+
+
+/* ----------------------- */
+/* ✅ Responsive Queries   */
+/* ----------------------- */
+
+/* Large Desktops (≥1440px) */
+@media (min-width: 1440px) {
+  .book-info-container {
+    max-width: 1000px;
+    padding: 30px;
+  }
+
+  .book-info-title {
+    font-size: 2rem;
+  }
+
+  .book-info-description {
+    font-size: 1.05rem;
+  }
+}
+
+/* Laptops / Medium Screens (1024px – 1366px) */
+@media (max-width: 1366px) {
+  .book-info-container {
+    max-width: 750px;
+    
+  }
+
+  .book-info-title {
+    font-size: 1rem;
+  }
+
+  .book-info-description {
+    font-size: 0.75rem;
+  }
+}
+
+/* Tablets (≤992px) */
+@media (max-width: 992px) {
+  .book-info-container {
+    max-width: 700px;
+    padding: 20px;
+  }
+
+  .book-info-title {
+    font-size: 1.5rem;
+  }
+
+  .book-info-description {
+    font-size: 0.95rem;
+  }
+}
+
+/* Small Tablets / Large Phones (≤768px) */
+@media (max-width: 768px) {
+  .book-info-container {
+    max-width: 95%;
+    padding: 18px;
+  }
+
+  .book-info-cover {
+    max-width: 240px;
+  }
+
+  .book-info-title {
+    font-size: 1.4rem;
+  }
+
+  .book-info-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+ 
+}
+
+/* Mobile (≤480px) */
+@media (max-width: 480px) {
+  .book-info-container {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .book-info-cover {
+    max-width: 200px;
+  }
+
+  .book-info-title {
+    font-size: 1.2rem;
+  }
+
+  .book-info-description {
+    font-size: 0.85rem;
+  }
+  h3{
+    margin-left: 3rem;
+  }
+  
+}
+
+/* Small Mobile (≤360px) */
+@media (max-width: 360px) {
+  .book-info-container {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .book-info-cover {
+    max-width: 160px;
+  }
+
+  .book-info-title {
+    font-size: 1.1rem;
+  }
+
+  .book-info-description {
+    font-size: 0.8rem;
+  }
+ 
+}

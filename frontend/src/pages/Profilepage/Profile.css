@@ -1,0 +1,52 @@
+.page {
+  background-color: #f5f7fa;
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.page-container h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.profile-page-cols {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+.profile-page-left-column,
+.profile-page-right-column {
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  min-height: 300px;
+}
+
+.profile-page-left-column {
+  background-color: #e3f2fd; /* Light Blue */
+}
+
+.profile-page-right-column {
+  background-color: #ffffff; /* White */
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  .profile-page-cols {
+    grid-template-columns: 1fr;
+  }
+}

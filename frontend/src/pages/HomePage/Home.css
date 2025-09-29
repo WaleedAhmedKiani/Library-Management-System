@@ -1,0 +1,101 @@
+.page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f4f6f8;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px 15px;
+  box-sizing: border-box;
+}
+
+.home-page-container {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.home-page-left,
+.home-page-right {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Desktop */
+.home-page-left {
+  flex: 2;
+  min-height: 400px;
+}
+
+.home-page-right {
+  flex: 1;
+  min-height: 400px;
+}
+
+/* 🔹 Laptop screens (1024px – 1366px) */
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .home-page-left {
+    flex: 3;   /* give more width to left side */
+  }
+  .home-page-right {
+    flex: 0.8; /* shrink right side */
+    min-height: 350px;
+  }
+}
+
+/* Tablet (≤992px) */
+@media (max-width: 992px) {
+  .home-page-container {
+    flex-direction: column;
+  }
+
+  .home-page-left,
+  .home-page-right {
+    flex: none;
+    width: 100%;
+  }
+
+  .home-page-right {
+    min-height: 250px;
+  }
+}
+
+/* Mobile (≤600px) */
+@media (max-width: 600px) {
+  .page {
+    padding: 20px 10px;
+  }
+
+  .home-page-container {
+    gap: 20px;
+  }
+
+  .home-page-left,
+  .home-page-right {
+    padding: 15px;
+    border-radius: 8px;
+    min-height: auto;
+  }
+}
+
+/* Small Mobile (≤400px) */
+@media (max-width: 400px) {
+  .page {
+    padding: 15px 8px;
+  }
+
+  .home-page-container {
+    gap: 15px;
+  }
+
+  .home-page-left,
+  .home-page-right {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+}

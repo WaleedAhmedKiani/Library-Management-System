@@ -1,0 +1,90 @@
+
+.library-hours {
+  width: 100%;
+  max-width: 500px;
+  margin: 10px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.library-hours h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+/* Table Styles */
+.hours-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.hours-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+}
+
+.hours-table tr:last-child td {
+  border-bottom: none;
+}
+
+.day {
+  font-weight: 600;
+  color: #333;
+  text-align: left;
+}
+
+.time {
+  color: #444;
+  text-align: right;
+}
+
+.time.closed {
+  color: #c0392b;
+  font-weight: bold;
+}
+
+/* Alternate row colors with stronger contrast */
+.hours-table tr:nth-child(odd) {
+  background-color: #eaf4ff; /* light gray */
+}
+
+.hours-table tr:nth-child(even) {
+  background-color: #f0f8ff; /* soft bluish gray */
+}
+
+/* Hover effect */
+.hours-table tr:hover {
+  background: #dfeee4; /* stronger greenish highlight */
+  transition: background 0.2s ease;
+}
+
+
+
+/* Responsive */
+@media (max-width: 600px) {
+  .hours-table td {
+    display: block;
+    width: 100%;
+    text-align: center !important;
+    padding: 8px 0;
+  }
+
+  .hours-table tr {
+    display: block;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    background: #f9fafb;
+    padding: 10px;
+  }
+
+  .hours-table tr:hover {
+    background: #eef7f0;
+  }
+}

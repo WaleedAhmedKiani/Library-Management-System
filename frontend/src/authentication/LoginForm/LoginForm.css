@@ -1,0 +1,132 @@
+/* Login Form Styles */
+.login-form {
+  width: 100%;
+  max-width: 1200px;
+  margin: 5px auto;
+  padding: 24px;
+  background: var(--background-secondary);
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Heading */
+.login-form h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+/* Error Message */
+.login-form-error {
+  color: red;
+  font-size: 0.9rem;
+  background: #ffe6e6;
+  padding: 8px 12px;
+  border-radius: 6px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Input Groups */
+.login-form-input-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.login-form-input-group h6 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.login-form-input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: var(--background-primary);
+  transition: border-color 0.3s ease;
+}
+
+.login-form-input:focus {
+  border-color: var(--color-primary);
+}
+
+/* Submit Button */
+.login-form-submit {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--color-primary);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-form-submit:hover {
+  background: #4338ca; /* darker indigo */
+}
+
+/* Register Link */
+.login-form p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.login-form-register {
+  color: var(--color-secondary);
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+.login-form-register:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+
+/* Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  .login-form {
+    max-width: 350px;
+    padding: 20px;
+  }
+
+  .login-form h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .login-form {
+    width: 90%;
+    padding: 16px;
+    border-radius: 10px;
+  }
+
+  .login-form h2 {
+    font-size: 1.3rem;
+  }
+
+  .login-form-submit {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+
+  .login-form-input {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+}

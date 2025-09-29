@@ -1,0 +1,149 @@
+/* UserProfile.css */
+
+/* 🔹 Profile Form Container */
+.update-user-form {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* 🔹 Input Group */
+.update-user-input-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.update-user-input-group h4 {
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* 🔹 Inputs */
+.update-user-input-group input {
+  width: 100%;
+  padding: 10px 40px 10px 12px; /* extra right padding for icon */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.update-user-input-group input:focus {
+  border-color: #1976d2;
+  box-shadow: 0 0 6px rgba(25, 118, 210, 0.25);
+}
+
+.update-user-input-group input:disabled {
+  background: #f4f4f4;
+  cursor: not-allowed;
+  color: #777;
+}
+
+/* 🔹 Edit Icon */
+.update-user-input-group .MuiSvgIcon-root {
+  position: absolute;
+  right: 12px;
+  top: 35px;
+  font-size: 20px;
+  color: #1976d2;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.update-user-input-group .MuiSvgIcon-root:hover {
+  color: #1259a7;
+}
+
+/* 🔹 Buttons */
+.profile-button {
+  display: inline-block;
+  margin: 6px 8px 0 0;
+  padding: 10px 16px;
+  background: #1976d2;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.profile-button:hover {
+  background: #1259a7;
+}
+
+.profile-button:disabled {
+  background: #bbb;
+  cursor: not-allowed;
+}
+
+/* 🔹 Responsive Styles */
+
+/* Tablet (≤768px) */
+@media (max-width: 768px) {
+  .update-user-form {
+    max-width: 95%;
+    padding: 16px;
+  }
+
+  .update-user-input-group h4 {
+    font-size: 13px;
+  }
+
+  .update-user-input-group input {
+    font-size: 13px;
+    padding: 9px 36px 9px 10px; /* keep space for icon */
+  }
+
+  .update-user-input-group .MuiSvgIcon-root {
+    top: 32px;
+    font-size: 18px;
+  }
+
+  .profile-button {
+    width: 100%;
+    margin: 10px 0 0 0;
+    padding: 12px;
+    font-size: 15px;
+  }
+}
+
+/* Mobile (≤480px) */
+@media (max-width: 480px) {
+  .update-user-form {
+    padding: 12px;
+    border-radius: 8px;
+    gap: 14px;
+  }
+
+  .update-user-input-group h4 {
+    font-size: 12px;
+  }
+
+  .update-user-input-group input {
+    font-size: 12px;
+    padding: 8px 34px 8px 8px; /* compact spacing */
+  }
+
+  .update-user-input-group .MuiSvgIcon-root {
+    top: 28px;
+    right: 10px;
+    font-size: 16px;
+  }
+
+  .profile-button {
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 6px;
+  }
+}

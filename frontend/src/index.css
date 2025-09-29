@@ -1,0 +1,181 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+/* CSS Variables */
+:root {
+  /* Backgrounds */
+  --background-primary: #ffffff;
+  --background-secondary: #f5f5f5;
+
+  /* Text colors */
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a4a4a;
+
+  /* Accent / brand colors */
+  --color-primary: #4f46e5;
+  /* Indigo */
+  --color-secondary: #06b6d4;
+  /* Cyan */
+
+  /* Shadows */
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Global Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  background: var(--background-primary);
+  color: var(--text-primary);
+  font-family: 'Nunito', "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Lists */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Buttons & inputs */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  outline: none;
+  background: none;
+  color: inherit;
+}
+
+/* Typography */
+p {
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 400;
+  /* Regular */
+}
+
+small {
+  font-size: 0.875rem;
+  font-weight: 300;
+  /* Light */
+  color: var(--text-secondary);
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  overflow-wrap: break-word;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+#root,
+#_next {
+  min-height: 100%;
+  isolation: isolate;
+  /* New stacking context */
+}
+
+h1 {
+  font-size: 2.25rem;
+  /* ~36px */
+  font-weight: 800;
+  /* Extra Bold */
+}
+
+h2 {
+  font-size: 1.75rem;
+  /* ~28px */
+  font-weight: 700;
+  /* Bold */
+}
+
+h3 {
+  font-size: 1.5rem;
+  /* ~24px */
+  font-weight: 600;
+  /* Semi-bold */
+}
+
+h4 {
+  font-size: 1.25rem;
+  /* ~20px */
+  font-weight: 500;
+  /* Medium */
+}
+
+h5 {
+  font-size: 1.125rem;
+  /* ~18px */
+  font-weight: 500;
+}
+
+h6 {
+  font-size: 1rem;
+  /* ~16px */
+  font-weight: 500;
+}
+
+/* Media */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.page{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.page-container {
+  width: 75%;
+  height: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: var(--background-primary);
+  box-shadow: var(--box-shadow);
+}

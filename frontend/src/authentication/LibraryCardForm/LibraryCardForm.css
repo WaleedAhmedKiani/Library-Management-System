@@ -1,0 +1,99 @@
+/* Container */
+.library-card-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Titles */
+.library-card-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.library-card-subtitle {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+/* Info */
+.library-card-info {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #2d7a2d;
+  margin-top: 1rem;
+}
+
+/* Button */
+.library-card-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #0077ff;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.15s ease;
+}
+
+.library-card-button:hover {
+  background: #005fcc;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .library-card-container {
+    margin: 1.5rem;
+    padding: 1rem;
+  }
+
+  .library-card-title {
+    font-size: 1.4rem;
+  }
+
+  .library-card-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .library-card-button {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .library-card-container {
+    margin: 1rem;
+    padding: 0.8rem;
+  }
+
+  .library-card-title {
+    font-size: 1.2rem;
+  }
+
+  .library-card-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .library-card-info {
+    font-size: 1rem;
+  }
+
+  .library-card-button {
+    font-size: 0.95rem;
+    padding: 0.75rem;
+  }
+}
