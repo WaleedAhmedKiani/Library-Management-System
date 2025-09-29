@@ -159,7 +159,7 @@ const authSlice = createSlice({
           state.profile = action.payload.user;
         }
       })
-      .addCase(fetchUser.rejected, (state, action) => {
+      .addCase(fetchUser.rejected, (state) => {
         state.loading = false;
         state.error = true;
       });
@@ -175,7 +175,7 @@ const authSlice = createSlice({
         state.loggedin = action.payload;
         state.profile = action.payload;
       })
-      .addCase(updateUser.rejected, (state, action) => {
+      .addCase(updateUser.rejected, (state) => {
         state.loading = false;
         state.error = true;
       });
@@ -189,7 +189,7 @@ const authSlice = createSlice({
         state.loading = false;
         state.libraryCard = action.payload._id;
       })
-      .addCase(createLibraryCard.rejected, (state, action) => {
+      .addCase(createLibraryCard.rejected, (state) => {
         state.loading = false;
         state.error = true;
       });
