@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
+import { API_BASE } from "../../api/Config";
 import type { Book } from "../../models/Book";
 
 interface PaginatedResponse<T> {
@@ -48,7 +49,7 @@ export const fetchBooks = createAsyncThunk<
   { page?: number; limit?: number; genre?: string }
 >("books/all", async ({ page = 1, limit = 24, genre }, thunkAPI) => {
   try {
-    let url = `http://localhost:8000/books?page=${page}&limit=${limit}`;
+    let url = `${API_BASE}/books?page=${page}&limit=${limit}`;
     if (genre && genre !== "All") url += `&genre=${genre}`;
     const response = await axios.get<PaginatedResponse<Book>>(url);
     return response.data;
@@ -64,7 +65,7 @@ export const searchBooks = createAsyncThunk<
 >("books/search", async ({ term, page = 1, limit = 24 }, thunkAPI) => {
   try {
     const response = await axios.get<PaginatedResponse<Book>>(
-      `http://localhost:8000/books/search?term=${term}&page=${page}&limit=${limit}`
+      `${API_BASE}/books/search?term=${term}&page=${page}&limit=${limit}`
     );
     return { term, response: response.data };
   } catch (error) {
@@ -77,7 +78,7 @@ export const fetchGenres = createAsyncThunk<string[]>(
   "books/genres",
   async (_, thunkAPI) => {
     try {
-      const response = await axios.get("http://localhost:8000/books/genres");
+      const response = await axios.get(`${API_BASE}/books/genres`);
       // Extract only the array of genres
       return response.data.data; // assumes backend returns { message, count, data: string[] }
     } catch (error) {

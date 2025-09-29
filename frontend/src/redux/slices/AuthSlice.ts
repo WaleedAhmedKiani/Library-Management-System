@@ -1,6 +1,9 @@
 import { createSlice, createAsyncThunk, type PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { API_BASE } from '../../api/Config';
 import type { FetchUserPayload, LoginUserPayload, RegisterUserPayload, User } from '../../models/User';
+
+
 
 interface AuthSliceState {
   loggedin: User | null;
@@ -25,7 +28,7 @@ export const loginUser = createAsyncThunk<User, LoginUserPayload, { rejectValue:
   'auth/login',
   async (user, thunkAPI) => {
     try {
-      const response = await axios.post('http://localhost:8000/auth/login', user);
+      const response = await axios.post(`${API_BASE}/auth/login`, user);
       return response.data.user as User;
     } catch (error: any) {
       const message =
@@ -39,7 +42,7 @@ export const registerUser = createAsyncThunk<User, RegisterUserPayload, { reject
   'auth/register',
   async (user, thunkAPI) => {
     try {
-      const response = await axios.post('http://localhost:8000/auth/register', user);
+      const response = await axios.post(`${API_BASE}/auth/register`, user);
       return response.data.user as User;
     } catch (error: any) {
       const message =
@@ -53,7 +56,7 @@ export const fetchUser = createAsyncThunk(
   'auth/fetchUser',
   async (payload: FetchUserPayload, thunkAPI) => {
     try {
-      const response = await axios.get(`http://localhost:8000/users/${payload.userId}`);
+      const response = await axios.get(`${API_BASE}/users/${payload.userId}`);
       return { user: response.data.data as User, property: payload.property };
     } catch (error: any) {
       const message =
@@ -67,7 +70,7 @@ export const updateUser = createAsyncThunk(
   'auth/updateUser',
   async (payload: User, thunkAPI) => {
     try {
-      const response = await axios.put(`http://localhost:8000/users`, payload);
+      const response = await axios.put(`${API_BASE}/users`, payload);
       return response.data.data as User;
     } catch (error: any) {
       const message =
@@ -81,7 +84,7 @@ export const createLibraryCard = createAsyncThunk(
   'auth/createLibraryCard',
   async (userId: string, thunkAPI) => {
     try {
-      const response = await axios.post("http://localhost:8000/card", { user: userId });
+      const response = await axios.post(`${API_BASE}/card`, { user: userId });
       return response.data.card;
     } catch (error) {
       return thunkAPI.rejectWithValue('Feiled to create library card');

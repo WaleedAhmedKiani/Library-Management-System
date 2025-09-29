@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
+import { API_BASE } from "../../api/Config";
 import type { LoanRecord, CreateLoanPayload } from "../../models/Libraryloan";
 
 interface LoanState {
@@ -21,7 +22,7 @@ export const createLoan = createAsyncThunk<
   { rejectValue: string }
 >("loan/create", async (record, thunkAPI) => {
   try {
-    const response = await axios.post("http://localhost:8000/loan", record);
+    const response = await axios.post(`${API_BASE}/loan`, record);
     return response.data.record; // backend returns { message, record }
   } catch (error: any) {
     return thunkAPI.rejectWithValue(
@@ -69,7 +70,7 @@ export const updateLoan = createAsyncThunk<
     payload.item = normalizeId(updates.item || existing.item);
 
     const response = await axios.put(
-      `http://localhost:8000/loan/${id}`,
+      `${API_BASE}/loan/${id}`,
       payload
     );
     return response.data.record;
@@ -89,7 +90,7 @@ export const fetchLoans = createAsyncThunk<
   { rejectValue: string }
 >("loan/fetchAll", async (_, thunkAPI) => {
   try {
-    const response = await axios.get("http://localhost:8000/loan");
+    const response = await axios.get(`${API_BASE}/loan`);
     return response.data.records;
   } catch (error: any) {
     return thunkAPI.rejectWithValue(error.response?.data?.error || "Failed to fetch loans");
@@ -103,7 +104,7 @@ export const queryLoans = createAsyncThunk<
   { rejectValue: string }
 >("loan/query", async ({ property, value }, thunkAPI) => {
   try {
-    const response = await axios.post("http://localhost:8000/loan/query", { property, value });
+    const response = await axios.post(`${API_BASE}/loan/query`, { property, value });
     return response.data.records;
   } catch (error: any) {
     return thunkAPI.rejectWithValue(error.response?.data?.error || "Failed to query loans");
